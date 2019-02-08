@@ -16,7 +16,17 @@ export class NewsApiService {
 
   }
 
+  initArticles(): Observable<any> {
 
+    return this.http.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=' + this.API_KEY);
+
+  }
+
+  getArticlesByID(source: string): Observable<any> {
+
+    return this.http.get('https://newsapi.org/v2/top-headlines?sources=' + source + '&apiKey=' + this.API_KEY);
+
+  }
 
 
 }
